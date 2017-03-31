@@ -13,14 +13,14 @@ namespace POS_C
         {
             this.numOfItems = 0;
             this.totals = new Money();
-            this.items = new int[100];
+            this.items = new long[100];
         }
 
         // Adds items to the transaction and increases the item count
-        public int AddItem(int sku, transactionScreen form)
+        public int AddItem(long sku, transactionScreen form)
         {
             // Attempt to find and fill the table with the SKU
-            int returnValue = form.inventoryTableAdapter.FillBySKU(form.pOSDataSet.Inventory, sku);
+            int returnValue = form.inventoryTableAdapter.FillBySKU(form.mASTERDataSet.Inventory, sku);
 
             // Check if an item was returned, and that the quantity is less than or equal to 0, and display the row in red
             if (returnValue != 0 && form.inventoryTableAdapter.GetQuantity(sku) <= 0)
@@ -74,6 +74,6 @@ namespace POS_C
 
         private int numOfItems;      // Store the number of items in the transaction
         private Money totals;   // Stores totals of the transaction
-        private int[] items;    // Stores the items in the transaction
+        private long[] items;    // Stores the items in the transaction
     }
 }

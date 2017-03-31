@@ -80,7 +80,7 @@ namespace POS_C
         {
             if (e.KeyChar == (char)Keys.Return)
             {
-                int sku;                            // Stores the SKU of the item entered
+                long sku;                            // Stores the SKU of the item entered
                 decimal price;                      // Stores the price of the item entered
 
                 // Reset error labels
@@ -90,7 +90,7 @@ namespace POS_C
                 // Try parsing of entered SKU, if failed, display an error indicating the SKU wasn't found
                 try
                 {
-                    sku = Int32.Parse(this.skuBox.Text);
+                    sku = Int64.Parse(this.skuBox.Text);
                     price = (decimal)inventoryTableAdapter.GetPrice(sku);
                     totalItemsLabel.Text = transaction.AddItem(sku, this).ToString();
                     transaction.UpdateTotals(price, this);
@@ -145,7 +145,7 @@ namespace POS_C
             skuErrorLabel.Visible = false;
             tenderedErrorLabel.Visible = false;
             skuBox.Enabled = true;
-            pOSDataSet.Clear();
+            mASTERDataSet.Clear();
             skuBox.Focus();
             skuBox.SelectionStart = 0;
             skuBox.SelectionLength = skuBox.TextLength;

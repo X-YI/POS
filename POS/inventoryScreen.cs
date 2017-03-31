@@ -31,7 +31,7 @@ namespace POS_C
             inventoryDataGridView.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             // Fill table upon opening of the window with inventory data
-            queryReturnValue = inventoryTableAdapter.Fill(pOSDataSet.Inventory);
+            queryReturnValue = inventoryTableAdapter.Fill(mASTERDataSet.Inventory);
             queryLabel.Text = queryReturnValue + " item(s) found";
 
             // Set initial radioBox value to 1
@@ -49,7 +49,7 @@ namespace POS_C
         // Function to parse the searchButton when clicked.
         private void searchButton_Click(object sender, EventArgs e)
         {
-            int sku;                        // Stores the SKU to be searched for
+            long sku;                        // Stores the SKU to be searched for
             string description;             // Stores search description
             decimal toPrice, fromPrice;     // Stores to and from search prices
             int toQuantity, fromQuantity;   // Stores to and from search quantities
@@ -62,25 +62,25 @@ namespace POS_C
                 {
                     case 1:
                         // Parse data from search boxes, fill table with found data, and return number of items found
-                        sku = Int32.Parse(searchBox1.Text);
-                        queryReturnValue = inventoryTableAdapter.FillBySKU(pOSDataSet.Inventory, sku);
+                        sku = Int64.Parse(searchBox1.Text);
+                        queryReturnValue = inventoryTableAdapter.FillBySKU(mASTERDataSet.Inventory, sku);
                         break;
                     case 2:
                         // Parse data from search boxes, fill table with found data, and return number of items found
                         description = '%' + searchBox1.Text + '%';
-                        queryReturnValue = inventoryTableAdapter.FillByDescription(pOSDataSet.Inventory, description);
+                        queryReturnValue = inventoryTableAdapter.FillByDescription(mASTERDataSet.Inventory, description);
                         break;
                     case 3:
                         // Parse data from search boxes, fill table with found data, and return number of items found
                         fromPrice = Decimal.Parse(searchBox1.Text); 
                         toPrice = Decimal.Parse(searchBox2.Text);
-                        queryReturnValue = inventoryTableAdapter.FillByPrice(pOSDataSet.Inventory, fromPrice, toPrice);
+                        queryReturnValue = inventoryTableAdapter.FillByPrice(mASTERDataSet.Inventory, fromPrice, toPrice);
                         break;
                     case 4:
                         // Parse data from search boxes, fill table with found data, and return number of items found
                         fromQuantity = Int32.Parse(searchBox1.Text);
                         toQuantity = Int32.Parse(searchBox2.Text);
-                        queryReturnValue = inventoryTableAdapter.FillByQuantity(pOSDataSet.Inventory, fromQuantity, toQuantity);
+                        queryReturnValue = inventoryTableAdapter.FillByQuantity(mASTERDataSet.Inventory, fromQuantity, toQuantity);
                         break;
                     default:
                         // Error
@@ -114,7 +114,7 @@ namespace POS_C
             skuRadioButton.Checked = true;
 
             // Reset table
-            queryReturnValue = inventoryTableAdapter.Fill(pOSDataSet.Inventory);
+            queryReturnValue = inventoryTableAdapter.Fill(mASTERDataSet.Inventory);
             queryLabel.Text = queryReturnValue + " item(s) found";
 
             // Set focus to searchBox1
@@ -181,7 +181,7 @@ namespace POS_C
         private void editInventoryButton_Click(object sender, EventArgs e)
         {
             // Reset datatable to display all inventory items
-            queryReturnValue = inventoryTableAdapter.Fill(pOSDataSet.Inventory);
+            queryReturnValue = inventoryTableAdapter.Fill(mASTERDataSet.Inventory);
             queryLabel.Text = queryReturnValue + " item(s) found";
 
             // Call editInventory window
@@ -189,7 +189,7 @@ namespace POS_C
             window.ShowDialog();
 
             // Reset datatable to display all inventory items upon return from editInventory
-            queryReturnValue = inventoryTableAdapter.Fill(pOSDataSet.Inventory);
+            queryReturnValue = inventoryTableAdapter.Fill(mASTERDataSet.Inventory);
             queryLabel.Text = queryReturnValue + " item(s) found";
         }
 

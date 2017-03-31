@@ -38,12 +38,12 @@
             this.saveButton = new System.Windows.Forms.Button();
             this.sKUTextBox = new System.Windows.Forms.TextBox();
             this.inventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pOSDataSet = new POS_C.POSDataSet();
+            this.mASTERDataSet = new POS_C.masterDataSet();
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.priceTextBox = new System.Windows.Forms.TextBox();
             this.quantityTextBox = new System.Windows.Forms.TextBox();
-            this.inventoryTableAdapter = new POS_C.POSDataSetTableAdapters.InventoryTableAdapter();
-            this.tableAdapterManager = new POS_C.POSDataSetTableAdapters.TableAdapterManager();
+            this.inventoryTableAdapter = new POS_C.masterDataSetTableAdapters.InventoryTableAdapter();
+            this.tableAdapterManager = new POS_C.masterDataSetTableAdapters.TableAdapterManager();
             this.closeButton = new System.Windows.Forms.Button();
             this.queryErrorLabel = new System.Windows.Forms.Label();
             this.cancelButton = new System.Windows.Forms.Button();
@@ -56,7 +56,7 @@
             priceLabel = new System.Windows.Forms.Label();
             quantityLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pOSDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mASTERDataSet)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.editInventorySplitContainer)).BeginInit();
             this.editInventorySplitContainer.Panel2.SuspendLayout();
@@ -141,12 +141,12 @@
             // inventoryBindingSource
             // 
             this.inventoryBindingSource.DataMember = "Inventory";
-            this.inventoryBindingSource.DataSource = this.pOSDataSet;
+            this.inventoryBindingSource.DataSource = this.mASTERDataSet;
             // 
-            // pOSDataSet
+            // mASTERDataSet
             // 
-            this.pOSDataSet.DataSetName = "POSDataSet";
-            this.pOSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.mASTERDataSet.DataSetName = "masterDataSet";
+            this.mASTERDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // descriptionTextBox
             // 
@@ -183,7 +183,7 @@
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.InventoryTableAdapter = this.inventoryTableAdapter;
-            this.tableAdapterManager.UpdateOrder = POS_C.POSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = POS_C.masterDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // closeButton
             // 
@@ -296,7 +296,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Edit Inventory";
             ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pOSDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mASTERDataSet)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.editInventorySplitContainer.Panel2.ResumeLayout(false);
             this.editInventorySplitContainer.Panel2.PerformLayout();
@@ -312,10 +312,10 @@
         private System.Windows.Forms.Button retrieveItemButton;
         private System.Windows.Forms.Button addNewItemButton;
         private System.Windows.Forms.Button saveButton;
-        private POSDataSet pOSDataSet;
+        private masterDataSet mASTERDataSet;
         private System.Windows.Forms.BindingSource inventoryBindingSource;
-        private POSDataSetTableAdapters.InventoryTableAdapter inventoryTableAdapter;
-        private POSDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private masterDataSetTableAdapters.InventoryTableAdapter inventoryTableAdapter;
+        private masterDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TextBox sKUTextBox;
         private System.Windows.Forms.TextBox descriptionTextBox;
         private System.Windows.Forms.TextBox priceTextBox;

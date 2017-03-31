@@ -65,7 +65,7 @@ namespace POS_C
         private void retrieveItemButton_Click(object sender, EventArgs e)
         {
             int returnValue = 0;    // Storage of database query return value
-            int sku=0;              // Storage of SKU
+            long sku=0;              // Storage of SKU
             
             // Clear error labels
             clearErrorLabels();
@@ -74,8 +74,8 @@ namespace POS_C
             try
             {
                 // Parse SKU Text Box to integer and query database for SKU
-                sku = Int32.Parse(sKUTextBox.Text);
-                returnValue = inventoryTableAdapter.FillBySKU(pOSDataSet.Inventory, sku);
+                sku = Int64.Parse(sKUTextBox.Text);
+                returnValue = inventoryTableAdapter.FillBySKU(mASTERDataSet.Inventory, sku);
 
                 // Check to see if SKU was found
                 switch (returnValue)
@@ -108,7 +108,7 @@ namespace POS_C
         private void newItemButton_Click(object sender, EventArgs e)
         {
             int returnValue = 0;    // Storage of database query return value
-            int sku = 0;              // Storage of SKU
+            long sku = 0;              // Storage of SKU
 
             // Clear error labels
             clearErrorLabels();
@@ -116,8 +116,8 @@ namespace POS_C
             try
             {
                 // Parse SKU Text Box to integer and query database for SKU
-                sku = Int32.Parse(sKUTextBox.Text);
-                returnValue = inventoryTableAdapter.FillBySKU(pOSDataSet.Inventory, sku);
+                sku = Int64.Parse(sKUTextBox.Text);
+                returnValue = inventoryTableAdapter.FillBySKU(mASTERDataSet.Inventory, sku);
 
                 // Check to see if SKU was found
                 switch (returnValue)
@@ -151,7 +151,7 @@ namespace POS_C
         private void saveButton_Click(object sender, EventArgs e)
         {
 
-            int sku;            // Storage of SKU
+            long sku;            // Storage of SKU
             string description; // Storage of Description
             decimal price;      // Storage of Price
             int quantity;       // Storage of Quantity
@@ -162,7 +162,7 @@ namespace POS_C
             // Try parsing of the text boxes
             try
             {
-                sku = Int32.Parse(sKUTextBox.Text);
+                sku = Int64.Parse(sKUTextBox.Text);
                 description = descriptionTextBox.Text;
                 price = Decimal.Parse(priceTextBox.Text);
                 quantity = Int32.Parse(quantityTextBox.Text);
@@ -184,8 +184,8 @@ namespace POS_C
             }
 
             // Change button/textbox visibility, set focus, and clear text boxes.
-            inventoryScreen.queryLabel.Text = inventoryScreen.inventoryTableAdapter.Fill(inventoryScreen.pOSDataSet.Inventory) +" item(s) found";
-            pOSDataSet.Clear();
+            inventoryScreen.queryLabel.Text = inventoryScreen.inventoryTableAdapter.Fill(inventoryScreen.mASTERDataSet.Inventory) +" item(s) found";
+            mASTERDataSet.Clear();
             stateChange(1);     // Set buttons and text boxes to state 1
         }
 
@@ -202,7 +202,7 @@ namespace POS_C
             clearErrorLabels();
 
             // Change button/textbox visibility, set focus, and clear text boxes.
-            pOSDataSet.Clear();
+            mASTERDataSet.Clear();
             stateChange(1);     // Set buttons and text boxes to state 1
         }
 

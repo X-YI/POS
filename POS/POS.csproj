@@ -51,10 +51,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Microsoft SQL Server Compact Edition\v4.0\Desktop\System.Data.SqlServerCe.dll</HintPath>
-    </Reference>
     <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -84,15 +80,15 @@
     <Compile Include="inventoryScreen.Designer.cs">
       <DependentUpon>inventoryScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Money.cs" />
-    <Compile Include="POSDataSet.cs">
-      <DependentUpon>POSDataSet.xsd</DependentUpon>
+    <Compile Include="masterDataSet.cs">
+      <DependentUpon>masterDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="POSDataSet.Designer.cs">
+    <Compile Include="masterDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>POSDataSet.xsd</DependentUpon>
+      <DependentUpon>masterDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Money.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transaction.cs" />
@@ -127,17 +123,18 @@
       <DependentUpon>transactionsScreen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="POSDataSet.xsc">
-      <DependentUpon>POSDataSet.xsd</DependentUpon>
+    <None Include="masterDataSet.xsc">
+      <DependentUpon>masterDataSet.xsd</DependentUpon>
     </None>
-    <None Include="POSDataSet.xsd">
+    <None Include="masterDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>POSDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>masterDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="POSDataSet.xss">
-      <DependentUpon>POSDataSet.xsd</DependentUpon>
+    <None Include="masterDataSet.xss">
+      <DependentUpon>masterDataSet.xsd</DependentUpon>
     </None>
+    <None Include="POS.db" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

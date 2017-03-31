@@ -51,9 +51,9 @@ namespace POS_C
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pOSDataSet = new POS_C.POSDataSet();
-            this.inventoryTableAdapter = new POS_C.POSDataSetTableAdapters.InventoryTableAdapter();
-            this.tableAdapterManager = new POS_C.POSDataSetTableAdapters.TableAdapterManager();
+            this.mASTERDataSet = new POS_C.masterDataSet();
+            this.inventoryTableAdapter = new POS_C.masterDataSetTableAdapters.InventoryTableAdapter();
+            this.tableAdapterManager = new POS_C.masterDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.inventorySplitContainer)).BeginInit();
             this.inventorySplitContainer.Panel1.SuspendLayout();
             this.inventorySplitContainer.Panel2.SuspendLayout();
@@ -61,7 +61,7 @@ namespace POS_C
             this.radioBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pOSDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mASTERDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // searchButton
@@ -299,12 +299,12 @@ namespace POS_C
             // inventoryBindingSource
             // 
             this.inventoryBindingSource.DataMember = "Inventory";
-            this.inventoryBindingSource.DataSource = this.pOSDataSet;
+            this.inventoryBindingSource.DataSource = this.mASTERDataSet;
             // 
-            // pOSDataSet
+            // mASTERDataSet
             // 
-            this.pOSDataSet.DataSetName = "POSDataSet";
-            this.pOSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.mASTERDataSet.DataSetName = "masterDataSet";
+            this.mASTERDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // inventoryTableAdapter
             // 
@@ -314,7 +314,7 @@ namespace POS_C
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.InventoryTableAdapter = this.inventoryTableAdapter;
-            this.tableAdapterManager.UpdateOrder = POS_C.POSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = POS_C.masterDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // inventoryScreen
             // 
@@ -340,7 +340,7 @@ namespace POS_C
             this.radioBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pOSDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mASTERDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -353,7 +353,7 @@ namespace POS_C
         private System.Windows.Forms.Label searchLabel1;
         private System.Windows.Forms.SplitContainer inventorySplitContainer;
         private System.Windows.Forms.BindingSource inventoryBindingSource;
-        private POSDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private masterDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView inventoryDataGridView;
         private GroupBox radioBox;
         private RadioButton skuRadioButton;
@@ -369,7 +369,7 @@ namespace POS_C
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private Button editInventoryButton;
         public Label queryLabel;
-        public POSDataSetTableAdapters.InventoryTableAdapter inventoryTableAdapter;
-        public POSDataSet pOSDataSet;
+        public masterDataSetTableAdapters.InventoryTableAdapter inventoryTableAdapter;
+        public masterDataSet mASTERDataSet;
     }
 }

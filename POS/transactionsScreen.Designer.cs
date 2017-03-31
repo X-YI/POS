@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.skuBox = new System.Windows.Forms.TextBox();
             this.skuLabel = new System.Windows.Forms.Label();
-            this.pOSDataSet = new POS_C.POSDataSet();
+            this.mASTERDataSet = new POS_C.masterDataSet();
             this.inventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.inventoryTableAdapter = new POS_C.POSDataSetTableAdapters.InventoryTableAdapter();
-            this.tableAdapterManager = new POS_C.POSDataSetTableAdapters.TableAdapterManager();
+            this.inventoryTableAdapter = new POS_C.masterDataSetTableAdapters.InventoryTableAdapter();
+            this.tableAdapterManager = new POS_C.masterDataSetTableAdapters.TableAdapterManager();
             this.inventoryDataGridView = new System.Windows.Forms.DataGridView();
             this.subtotalTitleLabel = new System.Windows.Forms.Label();
             this.taxTitleLabel = new System.Windows.Forms.Label();
@@ -61,7 +61,7 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.pOSDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mASTERDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryDataGridView)).BeginInit();
             this.currentTransactionGroupBox.SuspendLayout();
@@ -89,15 +89,15 @@
             this.skuLabel.TabIndex = 4;
             this.skuLabel.Text = "SKU:";
             // 
-            // pOSDataSet
+            // mASTERDataSet
             // 
-            this.pOSDataSet.DataSetName = "POSDataSet";
-            this.pOSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.mASTERDataSet.DataSetName = "masterDataSet";
+            this.mASTERDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // inventoryBindingSource
             // 
             this.inventoryBindingSource.DataMember = "Inventory";
-            this.inventoryBindingSource.DataSource = this.pOSDataSet;
+            this.inventoryBindingSource.DataSource = this.mASTERDataSet;
             // 
             // inventoryTableAdapter
             // 
@@ -107,7 +107,7 @@
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.InventoryTableAdapter = this.inventoryTableAdapter;
-            this.tableAdapterManager.UpdateOrder = POS_C.POSDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = POS_C.masterDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // inventoryDataGridView
             // 
@@ -415,7 +415,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Transactions";
             this.Load += new System.EventHandler(this.transactionsScreen_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pOSDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mASTERDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryDataGridView)).EndInit();
             this.currentTransactionGroupBox.ResumeLayout(false);
@@ -436,7 +436,7 @@
 
         private System.Windows.Forms.Label skuLabel;
         private System.Windows.Forms.BindingSource inventoryBindingSource;
-        private POSDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private masterDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Label subtotalTitleLabel;
         private System.Windows.Forms.Label taxTitleLabel;
         private System.Windows.Forms.Label totalTitleLabel;
@@ -450,12 +450,12 @@
         public System.Windows.Forms.Label changeLabel;
         public System.Windows.Forms.Label totalItemsLabel;
         private System.Windows.Forms.Button newTransactionButton;
-        public POSDataSet pOSDataSet;
+        public masterDataSet mASTERDataSet;
         public System.Windows.Forms.Label changeTitleLabel;
         public System.Windows.Forms.Label skuErrorLabel;
         public System.Windows.Forms.Label tenderedErrorLabel;
         public System.Windows.Forms.Button finalizeButton;
-        public POSDataSetTableAdapters.InventoryTableAdapter inventoryTableAdapter;
+        public masterDataSetTableAdapters.InventoryTableAdapter inventoryTableAdapter;
         private System.Windows.Forms.GroupBox currentTransactionGroupBox;
         private System.Windows.Forms.SplitContainer transactionSplitContainer;
         public System.Windows.Forms.DataGridView inventoryDataGridView;
