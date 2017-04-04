@@ -41,9 +41,9 @@
             // 
             this.viewInventoryButton.AutoSize = true;
             this.viewInventoryButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewInventoryButton.Location = new System.Drawing.Point(73, 84);
+            this.viewInventoryButton.Location = new System.Drawing.Point(73, 78);
             this.viewInventoryButton.Name = "viewInventoryButton";
-            this.viewInventoryButton.Size = new System.Drawing.Size(153, 31);
+            this.viewInventoryButton.Size = new System.Drawing.Size(153, 30);
             this.viewInventoryButton.TabIndex = 2;
             this.viewInventoryButton.Text = "View Inventory [F1]";
             this.viewInventoryButton.UseVisualStyleBackColor = true;
@@ -53,9 +53,9 @@
             // 
             this.transactionButton.AutoSize = true;
             this.transactionButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.transactionButton.Location = new System.Drawing.Point(118, 76);
+            this.transactionButton.Location = new System.Drawing.Point(118, 70);
             this.transactionButton.Name = "transactionButton";
-            this.transactionButton.Size = new System.Drawing.Size(141, 31);
+            this.transactionButton.Size = new System.Drawing.Size(141, 30);
             this.transactionButton.TabIndex = 3;
             this.transactionButton.Text = "Transactions [F2]";
             this.transactionButton.UseVisualStyleBackColor = true;
@@ -65,9 +65,9 @@
             // 
             this.exitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitButton.Location = new System.Drawing.Point(159, 349);
+            this.exitButton.Location = new System.Drawing.Point(159, 322);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(91, 28);
+            this.exitButton.Size = new System.Drawing.Size(91, 26);
             this.exitButton.TabIndex = 4;
             this.exitButton.Text = "Exit [Esc]";
             this.exitButton.UseVisualStyleBackColor = true;
@@ -77,30 +77,30 @@
             // 
             this.inventoryBox.Controls.Add(this.viewInventoryButton);
             this.inventoryBox.Font = new System.Drawing.Font("Segoe Script", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inventoryBox.Location = new System.Drawing.Point(55, 12);
+            this.inventoryBox.Location = new System.Drawing.Point(60, 25);
             this.inventoryBox.Name = "inventoryBox";
-            this.inventoryBox.Size = new System.Drawing.Size(300, 151);
+            this.inventoryBox.Size = new System.Drawing.Size(300, 139);
             this.inventoryBox.TabIndex = 5;
             this.inventoryBox.TabStop = false;
-            this.inventoryBox.Text = "Inventory";
+            this.inventoryBox.Text = "      库存";
             // 
             // transactionBox
             // 
             this.transactionBox.Controls.Add(this.transactionButton);
             this.transactionBox.Font = new System.Drawing.Font("Segoe Script", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.transactionBox.Location = new System.Drawing.Point(17, 184);
+            this.transactionBox.Location = new System.Drawing.Point(17, 170);
             this.transactionBox.Name = "transactionBox";
-            this.transactionBox.Size = new System.Drawing.Size(377, 142);
+            this.transactionBox.Size = new System.Drawing.Size(377, 131);
             this.transactionBox.TabIndex = 6;
             this.transactionBox.TabStop = false;
-            this.transactionBox.Text = "Transactions";
+            this.transactionBox.Text = "         交易";
             // 
             // homeScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.exitButton;
-            this.ClientSize = new System.Drawing.Size(410, 393);
+            this.ClientSize = new System.Drawing.Size(410, 363);
             this.Controls.Add(this.transactionBox);
             this.Controls.Add(this.inventoryBox);
             this.Controls.Add(this.exitButton);

@@ -881,9 +881,9 @@ namespace POS_C.masterDataSetTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "\r\n                      INSERT INTO Inventory\r\n                      (SKU, Descri" +
-                "ption, Price, Quantity)\r\n                      VALUES        (@sku,@description," +
-                "@price,@quantity)\r\n                    ";
+            this._commandCollection[1].CommandText = "\n                      INSERT INTO Inventory\n                      (SKU, Descript" +
+                "ion, Price, Quantity)\n                      VALUES        (@sku,@description,@pr" +
+                "ice,@quantity)\n                    ";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sku", global::System.Data.SqlDbType.BigInt, 16, global::System.Data.ParameterDirection.Input, 0, 0, "SKU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@description", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -891,8 +891,8 @@ namespace POS_C.masterDataSetTableAdapters {
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@quantity", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "\r\n                      UPDATE Inventory\r\n                      SET Quantity = Qu" +
-                "antity - 1\r\n                      WHERE SKU=@sku\r\n                    ";
+            this._commandCollection[2].CommandText = "\n                      UPDATE Inventory\n                      SET Quantity = Quan" +
+                "tity - 1\n                      WHERE SKU=@sku\n                    ";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sku", global::System.Data.SqlDbType.BigInt, 16, global::System.Data.ParameterDirection.Input, 0, 0, "SKU", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
@@ -922,23 +922,23 @@ namespace POS_C.masterDataSetTableAdapters {
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sku", global::System.Data.SqlDbType.BigInt, 16, global::System.Data.ParameterDirection.Input, 0, 0, "SKU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = "\r\n                      SELECT        Price AS Expr1\r\n                      FROM " +
-                "           Inventory\r\n                      WHERE        (SKU = @SKU)\r\n         " +
-                "           ";
+            this._commandCollection[7].CommandText = "\n                      SELECT        Price AS Expr1\n                      FROM   " +
+                "         Inventory\n                      WHERE        (SKU = @SKU)\n             " +
+                "       ";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sku", global::System.Data.SqlDbType.BigInt, 16, global::System.Data.ParameterDirection.Input, 0, 0, "SKU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = "\r\n                      SELECT        Quantity AS Expr1\r\n                      FR" +
-                "OM            Inventory\r\n                      WHERE        (SKU = @SKU)\r\n      " +
-                "              ";
+            this._commandCollection[8].CommandText = "\n                      SELECT        Quantity AS Expr1\n                      FROM" +
+                "            Inventory\n                      WHERE        (SKU = @SKU)\n          " +
+                "          ";
             this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sku", global::System.Data.SqlDbType.BigInt, 16, global::System.Data.ParameterDirection.Input, 0, 0, "SKU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[9] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[9].Connection = this.Connection;
-            this._commandCollection[9].CommandText = "\r\n                      UPDATE Inventory\r\n                      SET Description=@" +
-                "description, Price=@price, Quantity=@quantity\r\n                      WHERE SKU=@" +
-                "sku\r\n                    ";
+            this._commandCollection[9].CommandText = "\n                      UPDATE Inventory\n                      SET Description=@de" +
+                "scription, Price=@price, Quantity=@quantity\n                      WHERE SKU=@sku" +
+                "\n                    ";
             this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sku", global::System.Data.SqlDbType.BigInt, 16, global::System.Data.ParameterDirection.Input, 0, 0, "SKU", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@description", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

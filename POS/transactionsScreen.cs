@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
+
+
+
 
 namespace POS_C
 {
@@ -21,6 +25,7 @@ namespace POS_C
             // Sets up the handling of key input in the form.
             KeyPreview = true;
             KeyDown += new KeyEventHandler(transactionScreen_KeyDown);
+            CreateFileWatcher(@"C:\sku\");
         }
 
         private void transactionsScreen_Load(object sender, EventArgs e)
@@ -150,5 +155,67 @@ namespace POS_C
             skuBox.SelectionStart = 0;
             skuBox.SelectionLength = skuBox.TextLength;
         }
+
+        public void CreateFileWatcher(string path)
+        {
+            // Create a new FileSystemWatcher and set its properties.
+            FileSystemWatcher watcher = new System.IO.FileSystemWatcher();
+            watcher.Path = @"C:\sku";
+            /* Watch for changes in LastAccess and LastWrite times, and 
+               the renaming of files or directories. */
+            watcher.NotifyFilter = NotifyFilters.LastAccess | NotifyFilters.LastWrite
+               | NotifyFilters.FileName | NotifyFilters.DirectoryName | NotifyFilters.Size;
+            // Only watch text files.
+            watcher.Filter = "sku.txt";
+
+            // Add event handlers.
+            watcher.Changed += new FileSystemEventHandler(OnChanged);
+            watcher.Created += new FileSystemEventHandler(OnChanged);
+            watcher.Deleted += new FileSystemEventHandler(OnChanged);
+            watcher.Renamed += new RenamedEventHandler(OnRenamed);
+
+            // Begin watching.
+            watcher.EnableRaisingEvents = true;
+        }
+
+        // Define the event handlers.
+        private void OnChanged(object source, FileSystemEventArgs e)
+        {
+            // Specify what is done when a file is changed, created, or deleted.
+            Console.WriteLine("File: " + e.FullPath + " " + e.ChangeType);
+            try { 
+                SetText(File.ReadAllText(e.FullPath));
+            } catch
+            {
+            }
+
+        }
+
+        private void OnRenamed(object source, RenamedEventArgs e)
+        {
+            // Specify what is done when a file is renamed.
+            Console.WriteLine("File: {0} renamed to {1}", e.OldFullPath, e.FullPath);
+        }
+
+        delegate void SetTextCallback(string text);
+
+        private void SetText(string text)
+        {
+            // InvokeRequired required compares the thread ID of the
+            // calling thread to the thread ID of the creating thread.
+            // If these threads are different, it returns true.
+            if (this.skuBox.InvokeRequired)
+            {
+                SetTextCallback d = new SetTextCallback(SetText);
+                this.Invoke(d, new object[] { text });
+            }
+            else
+            {
+                this.skuBox.Text = text;
+                KeyPressEventArgs e = new KeyPressEventArgs((char)13);
+                addItem_keyPress(null, e);
+            }
+        }
+
     }
 }
